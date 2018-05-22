@@ -1,0 +1,11 @@
+<div>
+  <button type="button" (click)="isShow = !isShow">전환</button>
+  <label *ngIf="isShow; else hiding">You are special!</label>
+  <ng-template #hiding>
+    <label for="">I'm so depressed</label>
+  </ng-template>
+</div>
+
+<ng-container *ngIf="member">
+  <p>Name: {{member.name}}</p>
+</ng-container>
