@@ -7,6 +7,7 @@ import { NgforComponent } from './ngfor/ngfor.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { CustomPipePipe } from './pipe/custom-pipe.pipe';
+import { ServiceExComponent } from './service-ex/service-ex.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CustomPipePipe } from './pipe/custom-pipe.pipe';
     NgforComponent,
     NgswitchComponent,
     PipeComponent,
-    CustomPipePipe
+    CustomPipePipe,
+    ServiceExComponent
   ],
   imports: [
     BrowserModule
