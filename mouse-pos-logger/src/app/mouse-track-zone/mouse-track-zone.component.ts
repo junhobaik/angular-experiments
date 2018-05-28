@@ -1,16 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MySpecialLoggerService } from '../my-special-logger.service';
+import { Component, OnInit } from '@angular/core';
 import { LogLevel } from '../log-level.enum';
+import { MySpecialLoggerService } from '../my-special-logger.service';
 
 @Component({
   selector: 'mpl-mouse-track-zone',
   templateUrl: './mouse-track-zone.component.html',
   styleUrls: ['./mouse-track-zone.component.css']
 })
-export class MouseTrackZoneComponent implements OnInit {
-  @Input() private logger: MySpecialLoggerService;
 
-  constructor() {}
+export class MouseTrackZoneComponent implements OnInit {
+  constructor(private logger: MySpecialLoggerService) {}
 
   ngOnInit() {}
 
