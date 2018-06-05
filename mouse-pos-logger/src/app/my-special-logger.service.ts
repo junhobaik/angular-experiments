@@ -2,18 +2,20 @@ import { Injectable, Inject } from '@angular/core';
 import * as format from 'date-fns/format';
 import { LogLevel } from './log-level.enum';
 import { LOG_LEVEL_TOKEN } from './app.tokens';
+import { LoggerService } from './logger-service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MySpecialLoggerService {
-  logLevel: LogLevel;
+export class MySpecialLoggerService extends LoggerService {
+  // logLevel: LogLevel;
   logs: string[] = [];
   private readonly MAX_HISTORY_CNT: number = 100;
   private readonly TIME_FORMATTER: string = 'YYYY-MM-DD HH:mm:ss.SSS';
 
   constructor(@Inject(LOG_LEVEL_TOKEN) logLevel: LogLevel) {
-    this.logLevel = logLevel;
+    // this.logLevel = logLevel;
+    super(logLevel);
   }
 
   debug(msg: string) {
@@ -49,10 +51,10 @@ export class MySpecialLoggerService {
     return `[${LogLevel[logLevel]}] ${curTimestamp} - ${msg}`;
   }
 
-  private isProperLogLevel(logLevel: LogLevel): boolean {
-    if (this.logLevel === LogLevel.DEBUG) {
-      return true;
-    }
-    return logLevel >= this.logLevel;
-  }
+  // private isProperLogLevel(logLevel: LogLevel): boolean {
+  //   if (this.logLevel === LogLevel.DEBUG) {
+  //     return true;
+  //   }
+  //   return logLevel >= this.logLevel;
+  // }
 }
